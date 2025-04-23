@@ -1,0 +1,20 @@
+{
+  "name": "arbor_mechanica:volcano_big",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "arbor_mechanica:volcano_big",
+        "projection": "rigid",
+        "processors": [
+          {
+            "processor_type": "minecraft:blackstone_replace"
+          }
+        ],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    }
+  ]
+}
