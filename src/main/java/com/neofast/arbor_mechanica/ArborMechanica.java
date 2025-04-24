@@ -1,5 +1,7 @@
 package com.neofast.arbor_mechanica;
 
+import com.neofast.arbor_mechanica.blocks.Blocks;
+import com.neofast.arbor_mechanica.items.Items;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -35,6 +37,9 @@ public class ArborMechanica {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        Items.register(modEventBus);
+        Blocks.register(modEventBus);
+
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -49,6 +54,11 @@ public class ArborMechanica {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(Items.WOODEN_GEAR);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(Blocks.WOODEN_GEAR_BOX);
         }
     }
 

@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "arbor_mechanica:potentia_tree",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 80,
+    "separation": 60,
+    "spread_type": "linear",
+    "salt": 0,
+    "frequency_reduction_method": "default",
+    "frequency": 1
+  }
+}
