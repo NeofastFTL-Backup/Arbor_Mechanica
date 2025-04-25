@@ -1,5 +1,5 @@
 {
-  "itemGroup.arbor_mechanica": "Example Mod Tab",
-  "block.arbor_mechanica.example_block": "Example Block",
-  "item.arbor_mechanica.example_item": "Example Item"
+  "tooltip.arbor_mechanica.wooden_gear.tooltip": "You will need those for the Nature Tier Machines later",
+  "block.arbor_mechanica.wooden_gear_box": "Wooden Gear Box",
+  "item.arbor_mechanica.wooden_gear": "Wooden Gear"
 }
