@@ -1,0 +1,9 @@
+{
+  "type": "arbor_mechanica:natura_converter",
+  "ingredient": {
+    "item": "arbor_mechanica:wooden_gear"
+  },
+  "result": {
+    "id": "arbor_mechanica:wooden_gear_box"
+  }
+}

@@ -1,6 +1,6 @@
 package com.neofast.arbor_mechanica.block.entities;
 
-import com.neofast.arbor_mechanica.network.custom.NT_Machine1Menu;
+import com.neofast.arbor_mechanica.network.custom.NT_Machine2Menu;
 import com.neofast.arbor_mechanica.recipes.NatureConverterRecipe;
 import com.neofast.arbor_mechanica.recipes.NatureConverterRecipeInput;
 import com.neofast.arbor_mechanica.recipes.Recipes;
@@ -28,8 +28,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class NT_MachineEntity1 extends BlockEntity implements MenuProvider {
-    public final ItemStackHandler itemHandler = new ItemStackHandler(2) {
+public class NT_MachineEntity2 extends BlockEntity implements MenuProvider {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -40,20 +40,21 @@ public class NT_MachineEntity1 extends BlockEntity implements MenuProvider {
     };
 
     private static final int INPUT_SLOT = 0;
-    private static final int OUTPUT_SLOT = 1;
+    private static final int INPUT_2_SLOT = 1;
+    private static final int OUTPUT_SLOT = 2;
 
     protected final ContainerData data;
     private int progress = 0;
     private int maxProgress = 72;
 
-    public NT_MachineEntity1(BlockPos pos, BlockState blockState) {
-        super(TileEntities.NT_MACHINEENTITY1.get(), pos, blockState);
+    public NT_MachineEntity2(BlockPos pos, BlockState blockState) {
+        super(TileEntities.NT_MACHINEENTITY2.get(), pos, blockState);
         data = new ContainerData() {
             @Override
             public int get(int i) {
                 return switch (i) {
-                    case 0 -> NT_MachineEntity1.this.progress;
-                    case 1 -> NT_MachineEntity1.this.maxProgress;
+                    case 0 -> NT_MachineEntity2.this.progress;
+                    case 1 -> NT_MachineEntity2.this.maxProgress;
                     default -> 0;
                 };
             }
@@ -61,8 +62,8 @@ public class NT_MachineEntity1 extends BlockEntity implements MenuProvider {
             @Override
             public void set(int i, int value) {
                 switch (i) {
-                    case 0: NT_MachineEntity1.this.progress = value;
-                    case 1: NT_MachineEntity1.this.maxProgress = value;
+                    case 0: NT_MachineEntity2.this.progress = value;
+                    case 1: NT_MachineEntity2.this.maxProgress = value;
                 }
             }
 
@@ -75,13 +76,13 @@ public class NT_MachineEntity1 extends BlockEntity implements MenuProvider {
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("block.tutorialmod.nt_machineentity1");
+        return Component.translatable("block.arbor_mechanica.nt_machineentity2");
     }
 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return new NT_Machine1Menu(i, inventory, this, this.data);
+        return new NT_Machine2Menu(i, inventory, this, this.data);
     }
 
     public void drops() {
@@ -96,8 +97,8 @@ public class NT_MachineEntity1 extends BlockEntity implements MenuProvider {
     @Override
     protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
         pTag.put("inventory", itemHandler.serializeNBT(pRegistries));
-        pTag.putInt("nt_machineentity1.progress", progress);
-        pTag.putInt("nt_machineentity1.max_progress", maxProgress);
+        pTag.putInt("nt_machineentity2.progress", progress);
+        pTag.putInt("nt_machineentity2.max_progress", maxProgress);
 
         super.saveAdditional(pTag, pRegistries);
     }
@@ -107,8 +108,8 @@ public class NT_MachineEntity1 extends BlockEntity implements MenuProvider {
         super.loadAdditional(pTag, pRegistries);
 
         itemHandler.deserializeNBT(pRegistries, pTag.getCompound("inventory"));
-        progress = pTag.getInt("nt_machineentity1.progress");
-        maxProgress = pTag.getInt("nt_machineentity1.max_progress");
+        progress = pTag.getInt("nt_machineentity2.progress");
+        maxProgress = pTag.getInt("nt_machineentity2.max_progress");
     }
 
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {
@@ -130,6 +131,7 @@ public class NT_MachineEntity1 extends BlockEntity implements MenuProvider {
         ItemStack output = recipe.get().value().output();
 
         itemHandler.extractItem(INPUT_SLOT, 1, false);
+        itemHandler.extractItem(INPUT_2_SLOT, 1, false);
         itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(),
                 itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
     }

@@ -17,6 +17,10 @@ public class TileEntities {
             BLOCK_ENTITIES.register("nt_machineentity1", () -> BlockEntityType.Builder.of(
                     NT_MachineEntity1::new, Blocks.NT_MACHINE1.get()).build(null));
 
+    public static final Supplier<BlockEntityType<NT_MachineEntity2>> NT_MACHINEENTITY2 =
+            BLOCK_ENTITIES.register("nt_machineentity2", () -> BlockEntityType.Builder.of(
+                    NT_MachineEntity2::new, Blocks.NT_MACHINE2.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

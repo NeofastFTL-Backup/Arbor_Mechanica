@@ -1,0 +1,12 @@
+{
+  "type": "arbor_mechanica:natura_converter",
+  "ingredient": {
+    "item": "arbor_mechanica:wooden_gear"
+  },
+  "ingredient2": {
+    "item": "minecraft:oak_log"
+  },
+  "result": {
+    "id": "arbor_mechanica:wooden_gear_box"
+  }
+}

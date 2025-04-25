@@ -2,6 +2,7 @@ package com.neofast.arbor_mechanica.network;
 
 import com.neofast.arbor_mechanica.ArborMechanica;
 import com.neofast.arbor_mechanica.network.custom.NT_Machine1Menu;
+import com.neofast.arbor_mechanica.network.custom.NT_Machine2Menu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -17,6 +18,8 @@ public class Menus {
 
     public static final DeferredHolder<MenuType<?>, MenuType<NT_Machine1Menu>> NT_MACHINE1_MENU =
             registerMenuType("nt_machine1_menu", NT_Machine1Menu::new);
+    public static final DeferredHolder<MenuType<?>, MenuType<NT_Machine2Menu>> NT_MACHINE2_MENU =
+            registerMenuType("nt_machine2_menu", NT_Machine2Menu::new);
 
     private static <T extends AbstractContainerMenu>DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name,
                                                                                                               IContainerFactory<T> factory) {
