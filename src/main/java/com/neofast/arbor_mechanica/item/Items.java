@@ -1,4 +1,4 @@
-package com.neofast.arbor_mechanica.items;
+package com.neofast.arbor_mechanica.item;
 
 import com.neofast.arbor_mechanica.ArborMechanica;
 import net.minecraft.network.chat.Component;

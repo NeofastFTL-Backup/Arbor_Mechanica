@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "arbor_mechanica:block/nt_machine1_front",
+    "side": "arbor_mechanica:block/nt_machine1_side",
+    "top": "arbor_mechanica:block/nt_machine1_top"
+  }
+}

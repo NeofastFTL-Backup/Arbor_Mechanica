@@ -1,8 +1,12 @@
 package com.neofast.arbor_mechanica;
 
-import com.neofast.arbor_mechanica.blocks.Blocks;
-import com.neofast.arbor_mechanica.items.Items;
+import com.neofast.arbor_mechanica.block.Blocks;
+import com.neofast.arbor_mechanica.block.entities.TileEntities;
+import com.neofast.arbor_mechanica.item.Items;
+import com.neofast.arbor_mechanica.network.Menus;
+import com.neofast.arbor_mechanica.network.custom.NT_Machine1Screen;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -39,6 +43,8 @@ public class ArborMechanica {
 
         Items.register(modEventBus);
         Blocks.register(modEventBus);
+        TileEntities.register(modEventBus);
+        Menus.register(modEventBus);
 
 
         // Register the item to a creative tab
@@ -59,6 +65,7 @@ public class ArborMechanica {
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(Blocks.WOODEN_GEAR_BOX);
+            event.accept(Blocks.NT_MACHINE1);
         }
     }
 
@@ -74,6 +81,10 @@ public class ArborMechanica {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
+        }
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(Menus.NT_MACHINE1_MENU.get(), NT_Machine1Screen::new);
         }
     }
 }
