@@ -24,6 +24,16 @@ public class Recipes {
                 }
             });
 
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<NatureConverterRecipe2>> NATURA_CONVERTER2_SERIALIZER =
+            SERIALIZERS.register("natura_converter2", NatureConverterRecipe2.Serializer::new);
+    public static final DeferredHolder<RecipeType<?>, RecipeType<NatureConverterRecipe2>> NATURA_CONVERTER2_TYPE =
+            TYPES.register("natura_converter2", () -> new RecipeType<NatureConverterRecipe2>() {
+                @Override
+                public String toString() {
+                    return "natura_converter2";
+                }
+            });
+
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

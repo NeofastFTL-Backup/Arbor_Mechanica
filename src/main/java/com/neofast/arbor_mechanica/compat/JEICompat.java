@@ -3,7 +3,9 @@ package com.neofast.arbor_mechanica.compat;
 import com.neofast.arbor_mechanica.ArborMechanica;
 import com.neofast.arbor_mechanica.block.Blocks;
 import com.neofast.arbor_mechanica.network.custom.NT_Machine1Screen;
+import com.neofast.arbor_mechanica.network.custom.NT_Machine2Screen;
 import com.neofast.arbor_mechanica.recipes.NatureConverterRecipe;
+import com.neofast.arbor_mechanica.recipes.NatureConverterRecipe2;
 import com.neofast.arbor_mechanica.recipes.Recipes;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -30,6 +32,9 @@ public class JEICompat implements IModPlugin {
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new NatureConverterRecipeCategory(
                 registration.getJeiHelpers().getGuiHelper()));
+
+        registration.addRecipeCategories(new NatureConverter2RecipeCategory(
+                registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
@@ -39,17 +44,27 @@ public class JEICompat implements IModPlugin {
         List<NatureConverterRecipe> natureConverterRecipeCategory = recipeManager
                 .getAllRecipesFor(Recipes.NATURA_CONVERTER_TYPE.get()).stream().map(RecipeHolder::value).toList();
         registration.addRecipes(NatureConverterRecipeCategory.NATURA_CONVERTER_RECIPE_RECIPE_TYPE, natureConverterRecipeCategory);
+
+        List<NatureConverterRecipe2> natureConverter2RecipeCategory = recipeManager
+                .getAllRecipesFor(Recipes.NATURA_CONVERTER2_TYPE.get()).stream().map(RecipeHolder::value).toList();
+        registration.addRecipes(NatureConverter2RecipeCategory.NATURA_CONVERTER2_RECIPE_RECIPE_TYPE, natureConverter2RecipeCategory);
     }
 
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
         registration.addRecipeClickArea(NT_Machine1Screen.class, 74, 30, 22, 20,
                 NatureConverterRecipeCategory.NATURA_CONVERTER_RECIPE_RECIPE_TYPE);
+
+        registration.addRecipeClickArea(NT_Machine2Screen.class, 74, 30, 22, 20,
+                NatureConverter2RecipeCategory.NATURA_CONVERTER2_RECIPE_RECIPE_TYPE);
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
         registration.addRecipeCatalyst(new ItemStack(Blocks.NT_MACHINE1.get().asItem()),
                 NatureConverterRecipeCategory.NATURA_CONVERTER_RECIPE_RECIPE_TYPE);
+
+        registration.addRecipeCatalyst(new ItemStack(Blocks.NT_MACHINE2.get().asItem()),
+                NatureConverter2RecipeCategory.NATURA_CONVERTER2_RECIPE_RECIPE_TYPE);
     }
 }

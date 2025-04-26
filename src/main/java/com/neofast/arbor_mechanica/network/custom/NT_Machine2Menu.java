@@ -1,7 +1,7 @@
 package com.neofast.arbor_mechanica.network.custom;
 
 import com.neofast.arbor_mechanica.block.Blocks;
-import com.neofast.arbor_mechanica.block.entities.NT_MachineEntity1;
+import com.neofast.arbor_mechanica.block.entities.NT_MachineEntity2;
 import com.neofast.arbor_mechanica.network.Menus;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
 public class NT_Machine2Menu extends AbstractContainerMenu {
-    public final NT_MachineEntity1 blockEntity;
+    public final NT_MachineEntity2 blockEntity;
     private final Level level;
     private final ContainerData data;
 
@@ -22,8 +22,8 @@ public class NT_Machine2Menu extends AbstractContainerMenu {
     }
 
     public NT_Machine2Menu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(Menus.NT_MACHINE1_MENU.get(), pContainerId);
-        this.blockEntity = ((NT_MachineEntity1) entity);
+        super(Menus.NT_MACHINE2_MENU.get(), pContainerId);
+        this.blockEntity = ((NT_MachineEntity2) entity);
         this.level = inv.player.level();
         this.data = data;
 
@@ -31,7 +31,7 @@ public class NT_Machine2Menu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 0, 54, 34));
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 1, 4, 34));
+        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 1, 29, 34));
         this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 2, 104, 34));
 
         addDataSlots(data);
@@ -102,7 +102,7 @@ public class NT_Machine2Menu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, Blocks.NT_MACHINE1.get());
+                pPlayer, Blocks.NT_MACHINE2.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {
