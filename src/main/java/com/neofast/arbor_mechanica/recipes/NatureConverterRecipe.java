@@ -13,7 +13,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
-public record NatureConverterRecipe(Ingredient inputItem, Ingredient inputItem2, ItemStack output) implements Recipe<NatureConverterRecipeInput> {
+public record NatureConverterRecipe(Ingredient inputItem, ItemStack output) implements Recipe<NatureConverterRecipeInput> {
     // inputItem & output ==> Read From JSON File!
     // GrowthChamberRecipeInput --> INVENTORY of the Block Entity
 
@@ -61,14 +61,12 @@ public record NatureConverterRecipe(Ingredient inputItem, Ingredient inputItem2,
     public static class Serializer implements RecipeSerializer<NatureConverterRecipe> {
         public static final MapCodec<NatureConverterRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
                 Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(NatureConverterRecipe::inputItem),
-                Ingredient.CODEC_NONEMPTY.fieldOf("ingredient2").forGetter(NatureConverterRecipe::inputItem2),
                 ItemStack.CODEC.fieldOf("result").forGetter(NatureConverterRecipe::output)
         ).apply(inst, NatureConverterRecipe::new));
 
         public static final StreamCodec<RegistryFriendlyByteBuf, NatureConverterRecipe> STREAM_CODEC =
                 StreamCodec.composite(
                         Ingredient.CONTENTS_STREAM_CODEC, NatureConverterRecipe::inputItem,
-                        Ingredient.CONTENTS_STREAM_CODEC, NatureConverterRecipe::inputItem2,
                         ItemStack.STREAM_CODEC, NatureConverterRecipe::output,
                         NatureConverterRecipe::new);
 

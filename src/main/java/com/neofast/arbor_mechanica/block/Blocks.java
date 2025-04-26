@@ -23,6 +23,10 @@ public class Blocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(1f).sound(SoundType.WOOD)));
 
+    public static final DeferredBlock<Block> MOSSY_CORE = registerBlock("mossy_core",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(1f).sound(SoundType.CHERRY_LEAVES)));
+
     public static final DeferredBlock<Block> NT_MACHINE1 = registerBlock("nt_machine1",
             () -> new NT_Machine1(BlockBehaviour.Properties.of()));
 

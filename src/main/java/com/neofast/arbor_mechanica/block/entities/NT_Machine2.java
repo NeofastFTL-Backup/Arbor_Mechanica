@@ -60,7 +60,7 @@ public class NT_Machine2 extends BaseEntityBlock {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
             if(entity instanceof NT_MachineEntity2 nt_MachineEntity2) {
-                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(nt_MachineEntity2, Component.literal("Natura Converter")), pPos);
+                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(nt_MachineEntity2, Component.literal("Natura Converter MK2")), pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }

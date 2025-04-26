@@ -70,6 +70,7 @@ public class ArborMechanica {
             event.accept(Blocks.WOODEN_GEAR_BOX);
             event.accept(Blocks.NT_MACHINE1);
             event.accept(Blocks.NT_MACHINE2);
+            event.accept(Blocks.MOSSY_CORE);
         }
     }
 

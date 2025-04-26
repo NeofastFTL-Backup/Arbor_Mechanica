@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "arbor_mechanica:block/mossy_core"
+  }
+}

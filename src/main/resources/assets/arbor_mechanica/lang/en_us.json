@@ -1,7 +1,10 @@
 {
   "tooltip.arbor_mechanica.wooden_gear.tooltip": "You need to use that for the Nature Age Machines",
   "block.arbor_mechanica.wooden_gear_box": "Wooden Gear Box",
+  "block.arbor_mechanica.mossy_core": "Mossy Core",
   "block.arbor_mechanica.nt_machine1": "Natura Converter",
   "block.arbor_mechanica.nt_machine2": "Natura Converter MK2",
+  "block.arbor_mechanica.nt_machineentity1": "Natura Converter",
+  "block.arbor_mechanica.nt_machineentity2": "Natura Converter MK2",
   "item.arbor_mechanica.wooden_gear": "Wooden Gear"
 }
