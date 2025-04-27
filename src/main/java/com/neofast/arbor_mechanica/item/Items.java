@@ -21,6 +21,15 @@ public class Items {
                 }
             });
 
+    public static final DeferredItem<Item> SAPLING_GEAR = ITEMS.register("sapling_gear",
+            () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.arbor_mechanica.wooden_gear.tooltip"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

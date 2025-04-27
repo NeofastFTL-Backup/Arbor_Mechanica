@@ -1,8 +1,8 @@
 package com.neofast.arbor_mechanica.block.entities;
 
 import com.neofast.arbor_mechanica.network.custom.NT_Machine2Menu;
-import com.neofast.arbor_mechanica.recipes.NatureConverterRecipe;
-import com.neofast.arbor_mechanica.recipes.NatureConverterRecipeInput;
+import com.neofast.arbor_mechanica.recipes.NatureConverterRecipe2;
+import com.neofast.arbor_mechanica.recipes.NatureConverterRecipeInput2;
 import com.neofast.arbor_mechanica.recipes.Recipes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -23,13 +23,14 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.energy.EnergyStorage;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
 public class NT_MachineEntity2 extends BlockEntity implements MenuProvider {
-    public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(2) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -40,8 +41,7 @@ public class NT_MachineEntity2 extends BlockEntity implements MenuProvider {
     };
 
     private static final int INPUT_SLOT = 0;
-    private static final int INPUT_2_SLOT = 1;
-    private static final int OUTPUT_SLOT = 2;
+    private static final int OUTPUT_SLOT = 1;
 
     protected final ContainerData data;
     private int progress = 0;
@@ -76,7 +76,7 @@ public class NT_MachineEntity2 extends BlockEntity implements MenuProvider {
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("block.arbor_mechanica.nt_machineentity2");
+        return Component.translatable("block.tutorialmod.nt_machineentity2");
     }
 
     @Nullable
@@ -127,11 +127,10 @@ public class NT_MachineEntity2 extends BlockEntity implements MenuProvider {
     }
 
     private void craftItem() {
-        Optional<RecipeHolder<NatureConverterRecipe>> recipe = getCurrentRecipe();
+        Optional<RecipeHolder<NatureConverterRecipe2>> recipe = getCurrentRecipe();
         ItemStack output = recipe.get().value().output();
 
         itemHandler.extractItem(INPUT_SLOT, 1, false);
-        itemHandler.extractItem(INPUT_2_SLOT, 1, false);
         itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(),
                 itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
     }
@@ -150,7 +149,7 @@ public class NT_MachineEntity2 extends BlockEntity implements MenuProvider {
     }
 
     private boolean hasRecipe() {
-        Optional<RecipeHolder<NatureConverterRecipe>> recipe = getCurrentRecipe();
+        Optional<RecipeHolder<NatureConverterRecipe2>> recipe = getCurrentRecipe();
         if(recipe.isEmpty()) {
             return false;
         }
@@ -159,9 +158,9 @@ public class NT_MachineEntity2 extends BlockEntity implements MenuProvider {
         return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
     }
 
-    private Optional<RecipeHolder<NatureConverterRecipe>> getCurrentRecipe() {
+    private Optional<RecipeHolder<NatureConverterRecipe2>> getCurrentRecipe() {
         return this.level.getRecipeManager()
-                .getRecipeFor(Recipes.NATURA_CONVERTER_TYPE.get(), new NatureConverterRecipeInput(itemHandler.getStackInSlot(INPUT_SLOT)), level);
+                .getRecipeFor(Recipes.NATURA_CONVERTER_TYPE2.get(), new NatureConverterRecipeInput2(itemHandler.getStackInSlot(INPUT_SLOT)), level);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
@@ -185,5 +184,32 @@ public class NT_MachineEntity2 extends BlockEntity implements MenuProvider {
     @Override
     public Packet<ClientGamePacketListener> getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+
+    private final EnergyStorage energyStorage = new EnergyStorage(400000, 200, 0, 0) {
+        @Override
+        public int receiveEnergy(int maxReceive, boolean simulate) {
+            int retval = super.receiveEnergy(maxReceive, simulate);
+            if (!simulate) {
+                setChanged();
+                level.sendBlockUpdated(worldPosition, level.getBlockState(worldPosition), level.getBlockState(worldPosition), 2);
+            }
+            return retval;
+        }
+
+        @Override
+        public int extractEnergy(int maxExtract, boolean simulate) {
+            int retval = super.extractEnergy(maxExtract, simulate);
+            if (!simulate) {
+                setChanged();
+                level.sendBlockUpdated(worldPosition, level.getBlockState(worldPosition), level.getBlockState(worldPosition), 2);
+            }
+            return retval;
+        }
+    };
+
+    public EnergyStorage getEnergyStorage() {
+        return energyStorage;
     }
 }

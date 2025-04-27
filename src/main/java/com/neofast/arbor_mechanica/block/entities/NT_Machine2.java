@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.neoforged.neoforge.energy.EnergyStorage;
 import org.jetbrains.annotations.Nullable;
 
 public class NT_Machine2 extends BaseEntityBlock {
@@ -25,6 +26,8 @@ public class NT_Machine2 extends BaseEntityBlock {
     public NT_Machine2(Properties properties) {
         super(properties);
     }
+
+
 
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
@@ -46,21 +49,23 @@ public class NT_Machine2 extends BaseEntityBlock {
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof NT_MachineEntity2 nt_MachineEntity2) {
-                nt_MachineEntity2.drops();
+            if (blockEntity instanceof NT_MachineEntity2 NT_MachineEntity2) {
+                NT_MachineEntity2.drops();
             }
         }
 
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
     }
 
+
+
     @Override
     protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos,
                                               Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof NT_MachineEntity2 nt_MachineEntity2) {
-                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(nt_MachineEntity2, Component.literal("Natura Converter MK2")), pPos);
+            if(entity instanceof NT_MachineEntity2 NT_MachineEntity2) {
+                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(NT_MachineEntity2, Component.literal("Natura Converter MK2")), pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }

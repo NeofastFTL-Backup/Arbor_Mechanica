@@ -3,10 +3,7 @@
   "ingredient": {
     "item": "arbor_mechanica:wooden_gear"
   },
-  "ingredient2": {
-    "item": "minecraft:oak_log"
-  },
   "result": {
-    "id": "arbor_mechanica:wooden_gear_box"
+    "id": "arbor_mechanica:sapling_gear"
   }
 }

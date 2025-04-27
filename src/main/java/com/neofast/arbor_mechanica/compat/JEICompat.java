@@ -33,7 +33,7 @@ public class JEICompat implements IModPlugin {
         registration.addRecipeCategories(new NatureConverterRecipeCategory(
                 registration.getJeiHelpers().getGuiHelper()));
 
-        registration.addRecipeCategories(new NatureConverter2RecipeCategory(
+        registration.addRecipeCategories(new NatureConverterRecipeCategory2(
                 registration.getJeiHelpers().getGuiHelper()));
     }
 
@@ -46,8 +46,8 @@ public class JEICompat implements IModPlugin {
         registration.addRecipes(NatureConverterRecipeCategory.NATURA_CONVERTER_RECIPE_RECIPE_TYPE, natureConverterRecipeCategory);
 
         List<NatureConverterRecipe2> natureConverter2RecipeCategory = recipeManager
-                .getAllRecipesFor(Recipes.NATURA_CONVERTER2_TYPE.get()).stream().map(RecipeHolder::value).toList();
-        registration.addRecipes(NatureConverter2RecipeCategory.NATURA_CONVERTER2_RECIPE_RECIPE_TYPE, natureConverter2RecipeCategory);
+                .getAllRecipesFor(Recipes.NATURA_CONVERTER_TYPE2.get()).stream().map(RecipeHolder::value).toList();
+        registration.addRecipes(NatureConverterRecipeCategory2.NATURA_CONVERTER_RECIPE_RECIPE_TYPE2, natureConverter2RecipeCategory);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class JEICompat implements IModPlugin {
                 NatureConverterRecipeCategory.NATURA_CONVERTER_RECIPE_RECIPE_TYPE);
 
         registration.addRecipeClickArea(NT_Machine2Screen.class, 74, 30, 22, 20,
-                NatureConverter2RecipeCategory.NATURA_CONVERTER2_RECIPE_RECIPE_TYPE);
+                NatureConverterRecipeCategory2.NATURA_CONVERTER_RECIPE_RECIPE_TYPE2);
     }
 
     @Override
@@ -65,6 +65,6 @@ public class JEICompat implements IModPlugin {
                 NatureConverterRecipeCategory.NATURA_CONVERTER_RECIPE_RECIPE_TYPE);
 
         registration.addRecipeCatalyst(new ItemStack(Blocks.NT_MACHINE2.get().asItem()),
-                NatureConverter2RecipeCategory.NATURA_CONVERTER2_RECIPE_RECIPE_TYPE);
+                NatureConverterRecipeCategory2.NATURA_CONVERTER_RECIPE_RECIPE_TYPE2);
     }
 }
