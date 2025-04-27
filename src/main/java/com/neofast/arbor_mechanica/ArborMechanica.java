@@ -4,6 +4,7 @@ import com.neofast.arbor_mechanica.block.Blocks;
 import com.neofast.arbor_mechanica.block.entities.TileEntities;
 import com.neofast.arbor_mechanica.item.Items;
 import com.neofast.arbor_mechanica.network.Menus;
+import com.neofast.arbor_mechanica.network.custom.CuttingMachineScreen;
 import com.neofast.arbor_mechanica.network.custom.NT_Machine1Screen;
 import com.neofast.arbor_mechanica.network.custom.NT_Machine2Screen;
 import com.neofast.arbor_mechanica.recipes.Recipes;
@@ -64,12 +65,15 @@ public class ArborMechanica {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(Items.WOODEN_GEAR);
+            event.accept(Items.SAPLING_GEAR);
+            event.accept(Items.TWINE_CORD);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(Blocks.WOODEN_GEAR_BOX);
             event.accept(Blocks.NT_MACHINE1);
             event.accept(Blocks.NT_MACHINE2);
+            event.accept(Blocks.CUTTINGMACHINE);
             event.accept(Blocks.MOSSY_CORE);
         }
     }
@@ -91,6 +95,7 @@ public class ArborMechanica {
         public static void registerScreens(RegisterMenuScreensEvent event) {
             event.register(Menus.NT_MACHINE1_MENU.get(), NT_Machine1Screen::new);
             event.register(Menus.NT_MACHINE2_MENU.get(), NT_Machine2Screen::new);
+            event.register(Menus.CUTTINGMACHINE_MENU.get(), CuttingMachineScreen::new);
         }
     }
 }

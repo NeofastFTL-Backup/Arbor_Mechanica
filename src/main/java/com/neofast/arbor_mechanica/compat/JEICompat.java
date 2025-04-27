@@ -2,8 +2,10 @@ package com.neofast.arbor_mechanica.compat;
 
 import com.neofast.arbor_mechanica.ArborMechanica;
 import com.neofast.arbor_mechanica.block.Blocks;
+import com.neofast.arbor_mechanica.network.custom.CuttingMachineScreen;
 import com.neofast.arbor_mechanica.network.custom.NT_Machine1Screen;
 import com.neofast.arbor_mechanica.network.custom.NT_Machine2Screen;
+import com.neofast.arbor_mechanica.recipes.CuttingMachineRecipe;
 import com.neofast.arbor_mechanica.recipes.NatureConverterRecipe;
 import com.neofast.arbor_mechanica.recipes.NatureConverterRecipe2;
 import com.neofast.arbor_mechanica.recipes.Recipes;
@@ -48,6 +50,10 @@ public class JEICompat implements IModPlugin {
         List<NatureConverterRecipe2> natureConverter2RecipeCategory = recipeManager
                 .getAllRecipesFor(Recipes.NATURA_CONVERTER_TYPE2.get()).stream().map(RecipeHolder::value).toList();
         registration.addRecipes(NatureConverterRecipeCategory2.NATURA_CONVERTER_RECIPE_RECIPE_TYPE2, natureConverter2RecipeCategory);
+
+        List<CuttingMachineRecipe> cuttingMachineRecipeCategory = recipeManager
+                .getAllRecipesFor(Recipes.CUTTINGMACHINE_TYPE.get()).stream().map(RecipeHolder::value).toList();
+        registration.addRecipes(CuttingMachineRecipeCategory.CUTTING_MACHINE_RECIPE_RECIPE_TYPE, cuttingMachineRecipeCategory);
     }
 
     @Override
@@ -57,6 +63,11 @@ public class JEICompat implements IModPlugin {
 
         registration.addRecipeClickArea(NT_Machine2Screen.class, 74, 30, 22, 20,
                 NatureConverterRecipeCategory2.NATURA_CONVERTER_RECIPE_RECIPE_TYPE2);
+
+        registration.addRecipeClickArea(CuttingMachineScreen.class, 74, 30, 22, 20,
+                CuttingMachineRecipeCategory.CUTTING_MACHINE_RECIPE_RECIPE_TYPE);
+
+
     }
 
     @Override
@@ -66,5 +77,8 @@ public class JEICompat implements IModPlugin {
 
         registration.addRecipeCatalyst(new ItemStack(Blocks.NT_MACHINE2.get().asItem()),
                 NatureConverterRecipeCategory2.NATURA_CONVERTER_RECIPE_RECIPE_TYPE2);
+
+        registration.addRecipeCatalyst(new ItemStack(Blocks.CUTTINGMACHINE.get().asItem()),
+                CuttingMachineRecipeCategory.CUTTING_MACHINE_RECIPE_RECIPE_TYPE);
     }
 }

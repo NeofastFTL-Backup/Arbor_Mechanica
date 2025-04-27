@@ -34,6 +34,17 @@ public class Recipes {
                 }
             });
 
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<CuttingMachineRecipe>> CUTTINGMACHINE_SERIALIZER =
+            SERIALIZERS.register("cuttingmachine", CuttingMachineRecipe.Serializer::new);
+    public static final DeferredHolder<RecipeType<?>, RecipeType<CuttingMachineRecipe>> CUTTINGMACHINE_TYPE =
+            TYPES.register("cuttingmachine", () -> new RecipeType<CuttingMachineRecipe>() {
+                @Override
+                public String toString() {
+                    return "cuttingmachine";
+                }
+            });
+
+
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

@@ -7,5 +7,7 @@
   "block.arbor_mechanica.nt_machineentity1": "Natura Converter",
   "block.arbor_mechanica.nt_machineentity2": "Natura Converter MK2",
   "item.arbor_mechanica.wooden_gear": "Wooden Gear",
-  "item.arbor_mechanica.sapling_gear": "Sapling Gear"
+  "item.arbor_mechanica.sapling_gear": "Sapling Gear",
+  "tooltip.arbor_mechanica.twine_cord.tooltip": "For the Natura Smelter",
+  "item.arbor_mechanica.twine_cord": "Twine Cord"
 }

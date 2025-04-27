@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "arbor_mechanica:item/twine_cord"
+  }
+}

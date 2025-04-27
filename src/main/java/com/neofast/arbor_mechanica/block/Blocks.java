@@ -1,6 +1,7 @@
 package com.neofast.arbor_mechanica.block;
 
 import com.neofast.arbor_mechanica.ArborMechanica;
+import com.neofast.arbor_mechanica.block.entities.CuttingMachine;
 import com.neofast.arbor_mechanica.block.entities.NT_Machine1;
 import com.neofast.arbor_mechanica.block.entities.NT_Machine2;
 import com.neofast.arbor_mechanica.item.Items;
@@ -33,6 +34,8 @@ public class Blocks {
     public static final DeferredBlock<Block> NT_MACHINE2 = registerBlock("nt_machine2",
             () -> new NT_Machine2(BlockBehaviour.Properties.of()));
 
+    public static final DeferredBlock<Block> CUTTINGMACHINE = registerBlock("cuttingmachine",
+            () -> new CuttingMachine(BlockBehaviour.Properties.of()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
