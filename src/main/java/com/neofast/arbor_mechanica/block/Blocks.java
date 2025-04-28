@@ -4,6 +4,7 @@ import com.neofast.arbor_mechanica.ArborMechanica;
 import com.neofast.arbor_mechanica.block.entities.CuttingMachine;
 import com.neofast.arbor_mechanica.block.entities.NT_Machine1;
 import com.neofast.arbor_mechanica.block.entities.NT_Machine2;
+import com.neofast.arbor_mechanica.energy.NaturaCollectorBlock;
 import com.neofast.arbor_mechanica.item.Items;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -36,6 +37,9 @@ public class Blocks {
 
     public static final DeferredBlock<Block> CUTTINGMACHINE = registerBlock("cuttingmachine",
             () -> new CuttingMachine(BlockBehaviour.Properties.of()));
+
+    public static final DeferredBlock<Block> NATURA_COLLECTOR = registerBlock("natura_collector",
+            () -> new NaturaCollectorBlock(BlockBehaviour.Properties.of()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

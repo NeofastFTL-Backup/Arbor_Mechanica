@@ -1,5 +1,6 @@
 package com.neofast.arbor_mechanica.block.entities;
 
+import com.neofast.arbor_mechanica.network.custom.CuttingMachineMenu;
 import com.neofast.arbor_mechanica.network.custom.NT_Machine2Menu;
 import com.neofast.arbor_mechanica.recipes.CuttingMachineRecipe;
 import com.neofast.arbor_mechanica.recipes.CuttingMachineRecipeInput;
@@ -44,7 +45,7 @@ public class CuttingMachineEntity extends BlockEntity implements MenuProvider {
     private int maxProgress = 72;
 
     public CuttingMachineEntity(BlockPos pos, BlockState blockState) {
-        super(TileEntities.NT_MACHINEENTITY2.get(), pos, blockState);
+        super(TileEntities.CUTTINGMACHINEENTITY.get(), pos, blockState);
         data = new ContainerData() {
             @Override
             public int get(int i) {
@@ -78,7 +79,7 @@ public class CuttingMachineEntity extends BlockEntity implements MenuProvider {
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return new NT_Machine2Menu(i, inventory, this, this.data);
+        return new CuttingMachineMenu(i, inventory, this, this.data);
     }
 
     public void drops() {
@@ -156,7 +157,7 @@ public class CuttingMachineEntity extends BlockEntity implements MenuProvider {
 
     private Optional<RecipeHolder<CuttingMachineRecipe>> getCurrentRecipe() {
         return this.level.getRecipeManager()
-                .getRecipeFor(Recipes.NATURA_CONVERTER_TYPE2.get(), new CuttingMachineRecipeInput(itemHandler.getStackInSlot(INPUT_SLOT)), level);
+                .getRecipeFor(Recipes.CUTTINGMACHINE_TYPE.get(), new CuttingMachineRecipeInput(itemHandler.getStackInSlot(INPUT_SLOT)), level);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {

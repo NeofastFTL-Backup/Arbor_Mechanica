@@ -74,6 +74,7 @@ public class ArborMechanica {
             event.accept(Blocks.NT_MACHINE1);
             event.accept(Blocks.NT_MACHINE2);
             event.accept(Blocks.CUTTINGMACHINE);
+            event.accept(Blocks.NATURA_COLLECTOR);
             event.accept(Blocks.MOSSY_CORE);
         }
     }

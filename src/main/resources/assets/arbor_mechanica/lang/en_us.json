@@ -9,5 +9,6 @@
   "item.arbor_mechanica.wooden_gear": "Wooden Gear",
   "item.arbor_mechanica.sapling_gear": "Sapling Gear",
   "tooltip.arbor_mechanica.twine_cord.tooltip": "For the Natura Smelter",
-  "item.arbor_mechanica.twine_cord": "Twine Cord"
+  "item.arbor_mechanica.twine_cord": "Twine Cord",
+  "block.arbor_mechanica.cuttingmachine": "Cutting Machine"
 }
