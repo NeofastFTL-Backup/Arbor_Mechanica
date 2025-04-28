@@ -14,6 +14,17 @@ public class Recipes {
     public static final DeferredRegister<RecipeType<?>> TYPES =
             DeferredRegister.create(Registries.RECIPE_TYPE, ArborMechanica.MOD_ID);
 
+
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<CuttingMachineRecipe>> CUTTINGMACHINE_SERIALIZER =
+            SERIALIZERS.register("cuttingmachine", CuttingMachineRecipe.Serializer::new);
+    public static final DeferredHolder<RecipeType<?>, RecipeType<CuttingMachineRecipe>> CUTTINGMACHINE_TYPE =
+            TYPES.register("cuttingmachine", () -> new RecipeType<CuttingMachineRecipe>() {
+                @Override
+                public String toString() {
+                    return "cuttingmachine";
+                }
+            });
+
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<NatureConverterRecipe>> NATURA_CONVERTER_SERIALIZER =
             SERIALIZERS.register("natura_converter", NatureConverterRecipe.Serializer::new);
     public static final DeferredHolder<RecipeType<?>, RecipeType<NatureConverterRecipe>> NATURA_CONVERTER_TYPE =
@@ -33,18 +44,6 @@ public class Recipes {
                     return "natura_converter2";
                 }
             });
-
-    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<CuttingMachineRecipe>> CUTTINGMACHINE_SERIALIZER =
-            SERIALIZERS.register("cuttingmachine", CuttingMachineRecipe.Serializer::new);
-    public static final DeferredHolder<RecipeType<?>, RecipeType<CuttingMachineRecipe>> CUTTINGMACHINE_TYPE =
-            TYPES.register("cuttingmachine", () -> new RecipeType<CuttingMachineRecipe>() {
-                @Override
-                public String toString() {
-                    return "cuttingmachine";
-                }
-            });
-
-
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

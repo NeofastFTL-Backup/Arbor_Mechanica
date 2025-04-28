@@ -1,6 +1,7 @@
 package com.neofast.arbor_mechanica.network.custom;
 
 import com.neofast.arbor_mechanica.block.Blocks;
+import com.neofast.arbor_mechanica.block.entities.CuttingMachineEntity;
 import com.neofast.arbor_mechanica.block.entities.NT_MachineEntity1;
 import com.neofast.arbor_mechanica.network.Menus;
 import net.minecraft.network.FriendlyByteBuf;
@@ -13,7 +14,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
 public class CuttingMachineMenu extends AbstractContainerMenu {
-    public final NT_MachineEntity1 blockEntity;
+    public final CuttingMachineEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
@@ -23,7 +24,7 @@ public class CuttingMachineMenu extends AbstractContainerMenu {
 
     public CuttingMachineMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(Menus.CUTTINGMACHINE_MENU.get(), pContainerId);
-        this.blockEntity = ((NT_MachineEntity1) entity);
+        this.blockEntity = ((CuttingMachineEntity) entity);
         this.level = inv.player.level();
         this.data = data;
 
@@ -101,7 +102,7 @@ public class CuttingMachineMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, Blocks.NT_MACHINE1.get());
+                pPlayer, Blocks.CUTTINGMACHINE.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

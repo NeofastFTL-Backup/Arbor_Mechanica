@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "arbor_mechanica:block/natura_collector_bottom",
+    "top": "arbor_mechanica:block/natura_collector_top",
+    "side": "arbor_mechanica:block/natura_collector_side"
+  }
+}
