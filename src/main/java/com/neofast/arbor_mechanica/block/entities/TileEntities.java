@@ -25,6 +25,10 @@ public class TileEntities {
             BLOCK_ENTITIES.register("cuttingmachineentity", () -> BlockEntityType.Builder.of(
                     CuttingMachineEntity::new, Blocks.CUTTINGMACHINE.get()).build(null));
 
+    public static final Supplier<BlockEntityType<AbstractNaturaSmelterBlockEntity>> CUTTINGMACHINEENTITY =
+            BLOCK_ENTITIES.register("cuttingmachineentity", () -> BlockEntityType.Builder.of(
+                    AbstractNaturaSmelterBlockEntity::new, Blocks..get()).build(null));
+
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
