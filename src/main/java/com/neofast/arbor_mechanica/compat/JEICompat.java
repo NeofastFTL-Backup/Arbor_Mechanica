@@ -1,7 +1,7 @@
 package com.neofast.arbor_mechanica.compat;
 
 import com.neofast.arbor_mechanica.ArborMechanica;
-import com.neofast.arbor_mechanica.block.Blocks;
+import com.neofast.arbor_mechanica.block.Blocks2;
 import com.neofast.arbor_mechanica.network.custom.CuttingMachineScreen;
 import com.neofast.arbor_mechanica.network.custom.NT_Machine1Screen;
 import com.neofast.arbor_mechanica.network.custom.NT_Machine2Screen;
@@ -72,13 +72,13 @@ public class JEICompat implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        registration.addRecipeCatalyst(new ItemStack(Blocks.NT_MACHINE1.get().asItem()),
+        registration.addRecipeCatalyst(new ItemStack(Blocks2.NT_MACHINE1.get().asItem()),
                 NatureConverterRecipeCategory.NATURA_CONVERTER_RECIPE_RECIPE_TYPE);
 
-        registration.addRecipeCatalyst(new ItemStack(Blocks.NT_MACHINE2.get().asItem()),
+        registration.addRecipeCatalyst(new ItemStack(Blocks2.NT_MACHINE2.get().asItem()),
                 NatureConverterRecipeCategory2.NATURA_CONVERTER_RECIPE_RECIPE_TYPE2);
 
-        registration.addRecipeCatalyst(new ItemStack(Blocks.CUTTINGMACHINE.get().asItem()),
+        registration.addRecipeCatalyst(new ItemStack(Blocks2.CUTTINGMACHINE.get().asItem()),
                 CuttingMachineRecipeCategory.CUTTING_MACHINE_RECIPE_RECIPE_TYPE);
     }
 }

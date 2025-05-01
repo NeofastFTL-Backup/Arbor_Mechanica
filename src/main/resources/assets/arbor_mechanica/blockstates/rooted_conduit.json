@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "arbor_mechanica:block/rooted_conduit"
+    }
+  }
+}

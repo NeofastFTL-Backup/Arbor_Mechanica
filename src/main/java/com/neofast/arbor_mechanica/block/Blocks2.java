@@ -4,12 +4,13 @@ import com.neofast.arbor_mechanica.ArborMechanica;
 import com.neofast.arbor_mechanica.block.entities.CuttingMachine;
 import com.neofast.arbor_mechanica.block.entities.NT_Machine1;
 import com.neofast.arbor_mechanica.block.entities.NT_Machine2;
+import com.neofast.arbor_mechanica.block.entities.RootedConduitBlock;
 import com.neofast.arbor_mechanica.energy.NaturaCollectorBlock;
 import com.neofast.arbor_mechanica.item.Items;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.FurnaceBlock;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -18,7 +19,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class Blocks {
+public class Blocks2 {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(ArborMechanica.MOD_ID);
 
@@ -41,6 +42,10 @@ public class Blocks {
 
     public static final DeferredBlock<Block> NATURA_COLLECTOR = registerBlock("natura_collector",
             () -> new NaturaCollectorBlock(BlockBehaviour.Properties.of()));
+
+    public static final DeferredBlock<Block> ROOTED_CONDUIT = registerBlock("rooted_conduit",
+            () -> new RootedConduitBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CONDUIT).noOcclusion()));
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

@@ -1,8 +1,7 @@
 package com.neofast.arbor_mechanica.network.custom;
 
-import com.neofast.arbor_mechanica.block.Blocks;
+import com.neofast.arbor_mechanica.block.Blocks2;
 import com.neofast.arbor_mechanica.block.entities.CuttingMachineEntity;
-import com.neofast.arbor_mechanica.block.entities.NT_MachineEntity1;
 import com.neofast.arbor_mechanica.network.Menus;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -102,7 +101,7 @@ public class CuttingMachineMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, Blocks.CUTTINGMACHINE.get());
+                pPlayer, Blocks2.CUTTINGMACHINE.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

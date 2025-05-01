@@ -1,6 +1,6 @@
 package com.neofast.arbor_mechanica.network.custom;
 
-import com.neofast.arbor_mechanica.block.Blocks;
+import com.neofast.arbor_mechanica.block.Blocks2;
 import com.neofast.arbor_mechanica.block.entities.NT_MachineEntity2;
 import com.neofast.arbor_mechanica.network.Menus;
 import net.minecraft.network.FriendlyByteBuf;
@@ -101,7 +101,7 @@ public class NT_Machine2Menu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, Blocks.NT_MACHINE2.get());
+                pPlayer, Blocks2.NT_MACHINE2.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

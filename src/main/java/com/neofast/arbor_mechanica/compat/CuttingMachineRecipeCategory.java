@@ -1,7 +1,7 @@
 package com.neofast.arbor_mechanica.compat;
 
 import com.neofast.arbor_mechanica.ArborMechanica;
-import com.neofast.arbor_mechanica.block.Blocks;
+import com.neofast.arbor_mechanica.block.Blocks2;
 import com.neofast.arbor_mechanica.recipes.CuttingMachineRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -29,7 +29,7 @@ public class CuttingMachineRecipeCategory implements IRecipeCategory<CuttingMach
 
     public CuttingMachineRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE,0 ,0, 176, 85);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(Blocks.CUTTINGMACHINE));
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(Blocks2.CUTTINGMACHINE));
     }
 
     @Override

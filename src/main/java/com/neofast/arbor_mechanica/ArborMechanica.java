@@ -1,6 +1,6 @@
 package com.neofast.arbor_mechanica;
 
-import com.neofast.arbor_mechanica.block.Blocks;
+import com.neofast.arbor_mechanica.block.Blocks2;
 import com.neofast.arbor_mechanica.block.entities.TileEntities;
 import com.neofast.arbor_mechanica.item.Items;
 import com.neofast.arbor_mechanica.network.Menus;
@@ -45,7 +45,7 @@ public class ArborMechanica {
         NeoForge.EVENT_BUS.register(this);
 
         Items.register(modEventBus);
-        Blocks.register(modEventBus);
+        Blocks2.register(modEventBus);
         TileEntities.register(modEventBus);
         Menus.register(modEventBus);
         Recipes.register(modEventBus);
@@ -70,12 +70,13 @@ public class ArborMechanica {
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(Blocks.WOODEN_GEAR_BOX);
-            event.accept(Blocks.NT_MACHINE1);
-            event.accept(Blocks.NT_MACHINE2);
-            event.accept(Blocks.CUTTINGMACHINE);
-            event.accept(Blocks.NATURA_COLLECTOR);
-            event.accept(Blocks.MOSSY_CORE);
+            event.accept(Blocks2.WOODEN_GEAR_BOX);
+            event.accept(Blocks2.NT_MACHINE1);
+            event.accept(Blocks2.NT_MACHINE2);
+            event.accept(Blocks2.CUTTINGMACHINE);
+            event.accept(Blocks2.NATURA_COLLECTOR);
+            event.accept(Blocks2.MOSSY_CORE);
+            event.accept(Blocks2.ROOTED_CONDUIT);
         }
     }
 
