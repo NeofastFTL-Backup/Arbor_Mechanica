@@ -86,19 +86,6 @@ public class RootedConduitBlockEntity extends BlockEntity {
                 applyEffects(pLevel, pPos, list);
                 updateDestroyTarget(pLevel, pPos, pState, list, pBlockEntity);
             }
-
-            boolean flag2 = updateSecondShape(pLevel, pPos, list);
-            if (flag2 != pBlockEntity.isActive) {
-                SoundEvent soundevent = flag ? SoundEvents.CONDUIT_ACTIVATE : SoundEvents.CONDUIT_DEACTIVATE;
-                pLevel.playSound((Player)null, pPos, soundevent, SoundSource.BLOCKS, 0.5F, 1.0F);
-            }
-
-            pBlockEntity.isActive = flag2;
-            updateHunting(pBlockEntity, list);
-            if (flag2) {
-                applyEffects2(pLevel, pPos, list);
-                updateDestroyTarget(pLevel, pPos, pState, list, pBlockEntity);
-            }
         }
 
 
@@ -123,12 +110,6 @@ public class RootedConduitBlockEntity extends BlockEntity {
     //
 
     //
-
-    private static boolean isRootedConduitFrameOakLogsMossyStoneBricks(BlockState state, LevelReader level, BlockPos pos, BlockPos conduit)
-    {
-        return state.getBlock() == Blocks.OAK_LOG &&
-                state.getBlock() == Blocks.MOSSY_STONE_BRICKS;
-    }
     private static boolean updateShape(Level pLevel, BlockPos pPos, List<BlockPos> pPositions) {
         pPositions.clear();
 
@@ -142,7 +123,7 @@ public class RootedConduitBlockEntity extends BlockEntity {
                         BlockPos blockpos1 = pPos.offset(j1, k1, l1);
                         BlockState blockstate = pLevel.getBlockState(blockpos1);
 
-                        if (isRootedConduitFrameOakLogsMossyStoneBricks(blockstate, pLevel, blockpos1, pPos)) {
+                        if (isRootedConduitFrameMossBlocksOakLeaves(blockstate, pLevel, blockpos1, pPos)) {
                             pPositions.add(blockpos1);
                         }
                     }
@@ -169,54 +150,9 @@ public class RootedConduitBlockEntity extends BlockEntity {
         }
     }
 
-
-    //
-
-    //
-
-
-    private static boolean updateSecondShape(Level pLevel, BlockPos pPos, List<BlockPos> pPositions) {
-        pPositions.clear();
-
-        for(int j1 = -2; j1 <= 2; ++j1) {
-            for(int k1 = -2; k1 <= 2; ++k1) {
-                for(int l1 = -2; l1 <= 2; ++l1) {
-                    int i2 = Math.abs(j1);
-                    int l = Math.abs(k1);
-                    int i1 = Math.abs(l1);
-                    if ((i2 > 1 || l > 1 || i1 > 1) && (j1 == 0 && (l == 2 || i1 == 2) || k1 == 0 && (i2 == 2 || i1 == 2) || l1 == 0 && (i2 == 2 || l == 2))) {
-                        BlockPos blockpos1 = pPos.offset(j1, k1, l1);
-                        BlockState blockstate = pLevel.getBlockState(blockpos1);
-
-                        if (isRootedConduitFrameMossBlocksOakLeaves(blockstate, pLevel, blockpos1, pPos)) {
-                            pPositions.add(blockpos1);
-                        }
-                    }
-                }
-            }
-        }
-        return pPositions.size() >= 16;
-    }
-    private static void applyEffects2(Level pLevel, BlockPos pPos, List<BlockPos> pPositions) {
-        int i = pPositions.size();
-        int j = i / 7 * 10;
-        int k = pPos.getX();
-        int l = pPos.getY();
-        int i1 = pPos.getZ();
-        AABB aabb = (new AABB((double)k, (double)l, (double)i1, (double)(k + 1), (double)(l + 1), (double)(i1 + 1))).inflate((double)j).expandTowards(0.0D, (double)pLevel.getHeight(), 0.0D);
-        List<Player> list = pLevel.getEntitiesOfClass(Player.class, aabb);
-        if (!list.isEmpty()) {
-            for(Player player : list) {
-                if (pPos.closerThan(player.blockPosition(), (double)j)) {
-                    player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 260, 1, true, false, true));
-                }
-            }
-
-        }
-    }
     private static boolean isRootedConduitFrameMossBlocksOakLeaves(BlockState state, LevelReader level, BlockPos pos, BlockPos conduit)
     {
-        return state.getBlock() == Blocks.MOSS_BLOCK &&
+        return state.getBlock() == Blocks.MOSS_BLOCK ||
                 state.getBlock() == Blocks.OAK_LEAVES;
     }
 
