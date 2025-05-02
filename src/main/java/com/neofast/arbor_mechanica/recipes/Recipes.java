@@ -14,14 +14,13 @@ public class Recipes {
     public static final DeferredRegister<RecipeType<?>> TYPES =
             DeferredRegister.create(Registries.RECIPE_TYPE, ArborMechanica.MOD_ID);
 
-
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<CuttingMachineRecipe>> CUTTINGMACHINE_SERIALIZER =
-            SERIALIZERS.register("cuttingmachine", CuttingMachineRecipe.Serializer::new);
+            SERIALIZERS.register("cuttingmachine_recipe", CuttingMachineRecipe.Serializer::new);
     public static final DeferredHolder<RecipeType<?>, RecipeType<CuttingMachineRecipe>> CUTTINGMACHINE_TYPE =
-            TYPES.register("cuttingmachine", () -> new RecipeType<CuttingMachineRecipe>() {
+            TYPES.register("cuttingmachine_recipe", () -> new RecipeType<CuttingMachineRecipe>() {
                 @Override
                 public String toString() {
-                    return "cuttingmachine";
+                    return "cuttingmachine_recipe";
                 }
             });
 
@@ -44,7 +43,6 @@ public class Recipes {
                     return "natura_converter2";
                 }
             });
-
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
         TYPES.register(eventBus);

@@ -77,6 +77,8 @@ public class ArborMechanica {
             event.accept(Blocks2.NATURA_COLLECTOR);
             event.accept(Blocks2.MOSSY_CORE);
             event.accept(Blocks2.ROOTED_CONDUIT);
+            event.accept(Blocks2.FROSTING_CONDUIT);
+            event.accept(Blocks2.MOSSY_CONDUIT);
         }
     }
 

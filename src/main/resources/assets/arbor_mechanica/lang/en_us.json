@@ -12,5 +12,7 @@
   "tooltip.arbor_mechanica.twine_cord.tooltip": "For the Natura Smelter",
   "item.arbor_mechanica.twine_cord": "Twine Cord",
   "block.arbor_mechanica.cuttingmachine": "Cutting Machine",
-  "block.arbor_mechanica.rooted_conduit": "Rooted Conduit"
+  "block.arbor_mechanica.rooted_conduit": "Rooted Conduit",
+  "block.arbor_mechanica.frosting_conduit": "Frosting Conduit",
+  "block.arbor_mechanica.mossy_conduit": "Mossy Conduit"
 }

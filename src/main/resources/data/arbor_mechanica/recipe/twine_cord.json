@@ -1,0 +1,9 @@
+{
+  "type": "arbor_mechanica:cuttingmachine_recipe",
+  "ingredient": {
+    "item": "arbor_mechanica:sapling_gear"
+  },
+  "result": {
+    "id": "arbor_mechanica:twine_cord"
+  }
+}

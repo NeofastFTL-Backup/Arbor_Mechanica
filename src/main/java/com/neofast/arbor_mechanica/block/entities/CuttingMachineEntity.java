@@ -1,7 +1,6 @@
 package com.neofast.arbor_mechanica.block.entities;
 
 import com.neofast.arbor_mechanica.network.custom.CuttingMachineMenu;
-import com.neofast.arbor_mechanica.network.custom.NT_Machine2Menu;
 import com.neofast.arbor_mechanica.recipes.CuttingMachineRecipe;
 import com.neofast.arbor_mechanica.recipes.CuttingMachineRecipeInput;
 import com.neofast.arbor_mechanica.recipes.Recipes;
@@ -134,7 +133,7 @@ public class CuttingMachineEntity extends BlockEntity implements MenuProvider {
 
     private void resetProgress() {
         progress = 0;
-        maxProgress = 72;
+        maxProgress = 1;
     }
 
     private boolean hasCraftingFinished() {

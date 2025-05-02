@@ -1,10 +1,7 @@
 package com.neofast.arbor_mechanica.block;
 
 import com.neofast.arbor_mechanica.ArborMechanica;
-import com.neofast.arbor_mechanica.block.entities.CuttingMachine;
-import com.neofast.arbor_mechanica.block.entities.NT_Machine1;
-import com.neofast.arbor_mechanica.block.entities.NT_Machine2;
-import com.neofast.arbor_mechanica.block.entities.RootedConduitBlock;
+import com.neofast.arbor_mechanica.block.entities.*;
 import com.neofast.arbor_mechanica.energy.NaturaCollectorBlock;
 import com.neofast.arbor_mechanica.item.Items;
 import net.minecraft.world.item.BlockItem;
@@ -45,6 +42,12 @@ public class Blocks2 {
 
     public static final DeferredBlock<Block> ROOTED_CONDUIT = registerBlock("rooted_conduit",
             () -> new RootedConduitBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CONDUIT).noOcclusion()));
+
+    public static final DeferredBlock<Block> FROSTING_CONDUIT = registerBlock("frosting_conduit",
+            () -> new FrostingConduitBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CONDUIT).noOcclusion()));
+
+    public static final DeferredBlock<Block> MOSSY_CONDUIT = registerBlock("mossy_conduit",
+            () -> new MossyConduitBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CONDUIT).noOcclusion()));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

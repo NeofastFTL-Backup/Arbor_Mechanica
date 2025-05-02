@@ -29,6 +29,15 @@ public class TileEntities {
             BLOCK_ENTITIES.register("rooted_conduit_block_entity", () -> BlockEntityType.Builder.of(
                     RootedConduitBlockEntity::new, Blocks2.ROOTED_CONDUIT.get()).build(null));
 
+    public static final Supplier<BlockEntityType<FrostingConduitBlockEntity>> FROSTING_CONDUIT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("frosting_conduit_block_entity", () -> BlockEntityType.Builder.of(
+                    FrostingConduitBlockEntity::new, Blocks2.FROSTING_CONDUIT.get()).build(null));
+
+
+    public static final Supplier<BlockEntityType<MossyConduitBlockEntity>> MOSSY_CONDUIT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("mossy_conduit_block_entity", () -> BlockEntityType.Builder.of(
+                    MossyConduitBlockEntity::new, Blocks2.MOSSY_CONDUIT.get()).build(null));
+
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

@@ -17,7 +17,7 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
 public class CuttingMachineRecipeCategory implements IRecipeCategory<CuttingMachineRecipe> {
-    public static final ResourceLocation UID = ResourceLocation.fromNamespaceAndPath(ArborMechanica.MOD_ID, "cuttingmachine");
+    public static final ResourceLocation UID = ResourceLocation.fromNamespaceAndPath(ArborMechanica.MOD_ID, "cuttingmachine_recipe");
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(ArborMechanica.MOD_ID,
             "textures/gui/nt_machineentity1/cutting_machine_gui.png");
 

@@ -37,6 +37,9 @@ public class JEICompat implements IModPlugin {
 
         registration.addRecipeCategories(new NatureConverterRecipeCategory2(
                 registration.getJeiHelpers().getGuiHelper()));
+
+        registration.addRecipeCategories(new CuttingMachineRecipeCategory(
+                registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
