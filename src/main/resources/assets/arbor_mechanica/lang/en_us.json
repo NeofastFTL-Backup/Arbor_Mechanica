@@ -14,5 +14,9 @@
   "block.arbor_mechanica.cuttingmachine": "Cutting Machine",
   "block.arbor_mechanica.rooted_conduit": "Rooted Conduit",
   "block.arbor_mechanica.frosting_conduit": "Frosting Conduit",
-  "block.arbor_mechanica.mossy_conduit": "Mossy Conduit"
+  "block.arbor_mechanica.mossy_conduit": "Mossy Conduit",
+  "tooltip.arbor_mechanica.plant_fibers.tooltip": "Obtainable by breaking grass with a knife.",
+  "item.arbor_mechanica.plant_fibers": "Plant Fibers",
+  "tooltip.arbor_mechanica.wooden_knife.tooltip": "Used for cutting nature plants",
+  "item.arbor_mechanica.wooden_knife": "Wooden Knife"
 }

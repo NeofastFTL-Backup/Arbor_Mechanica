@@ -67,6 +67,8 @@ public class ArborMechanica {
             event.accept(Items.WOODEN_GEAR);
             event.accept(Items.SAPLING_GEAR);
             event.accept(Items.TWINE_CORD);
+            event.accept(Items.PLANT_FIBERS);
+            event.accept(Items.WOODEN_KNIFE);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {

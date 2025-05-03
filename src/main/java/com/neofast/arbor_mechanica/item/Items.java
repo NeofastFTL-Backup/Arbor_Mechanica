@@ -39,6 +39,24 @@ public class Items {
                 }
             });
 
+    public static final DeferredItem<Item> PLANT_FIBERS = ITEMS.register("plant_fibers",
+            () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.arbor_mechanica.plant_fibers.tooltip"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+
+    public static final DeferredItem<Item> WOODEN_KNIFE = ITEMS.register("wooden_knife",
+            () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.arbor_mechanica.wooden_knife.tooltip"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

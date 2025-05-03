@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "arbormechanica",
+  "key": {
+    "#": {
+      "item": "minecraft:stripped_acacia_log"
+    },
+    "X": {
+      "item": "minecraft:chain"
+    }
+  },
+  "pattern": [
+    "X X",
+    "X X",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "arbor_mechanica:nt_machine1"
+  }
+}
