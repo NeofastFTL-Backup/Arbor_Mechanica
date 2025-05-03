@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "arbormechanica",
+  "key": {
+    "L": {
+      "item": "minecraft:blue_ice"
+    },
+    "R": {
+      "item": "minecraft:powder_snow_bucket"
+    },
+    "G": {
+      "item": "minecraft:conduit"
+    }
+  },
+  "pattern": [
+    "LRL",
+    "RGR",
+    "LRL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "arbor_mechanica:frosting_conduit"
+  }
+}

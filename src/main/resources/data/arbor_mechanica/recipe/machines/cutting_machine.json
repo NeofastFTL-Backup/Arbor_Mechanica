@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "arbormechanica",
+  "key": {
+    "#": {
+      "item": "minecraft:oak_log"
+    },
+    "M": {
+      "item": "arbor_mechanica:mossy_core"
+    },
+    "B": {
+      "item": "minecraft:black_wool"
+    },
+    "G": {
+      "item": "arbor_mechanica:wooden_gear_box"
+    },
+    "S": {
+      "item": "arbor_mechanica:sapling_gear"
+    }
+  },
+  "pattern": [
+    " S ",
+    "BGB",
+    "#M#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "arbor_mechanica:cuttingmachine"
+  }
+}

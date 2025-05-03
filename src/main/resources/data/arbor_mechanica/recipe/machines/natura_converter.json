@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "arbormechanica",
+  "key": {
+    "#": {
+      "item": "arbor_mechanica:plant_fibers"
+    },
+    "M": {
+      "item": "minecraft:mossy_cobblestone"
+    },
+    "B": {
+      "item": "arbor_mechanica:fiber_rug"
+    },
+    "G": {
+      "item": "minecraft:chest"
+    },
+    "S": {
+      "item": "arbor_mechanica:mossy_core"
+    }
+  },
+  "pattern": [
+    "#S#",
+    "BGB",
+    "#M#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "arbor_mechanica:nt_machine1"
+  }
+}

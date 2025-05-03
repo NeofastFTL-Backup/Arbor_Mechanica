@@ -2,10 +2,12 @@ package com.neofast.arbor_mechanica.block;
 
 import com.neofast.arbor_mechanica.ArborMechanica;
 import com.neofast.arbor_mechanica.block.entities.*;
-import com.neofast.arbor_mechanica.energy.NaturaCollectorBlock;
 import com.neofast.arbor_mechanica.item.Items;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -14,6 +16,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class Blocks2 {
@@ -26,7 +29,14 @@ public class Blocks2 {
 
     public static final DeferredBlock<Block> MOSSY_CORE = registerBlock("mossy_core",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(1f).sound(SoundType.CHERRY_LEAVES)));
+                    .strength(1f).sound(SoundType.CHERRY_LEAVES)) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.arbor_mechanica.mossy_core.tooltip"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            }
+    );
 
     public static final DeferredBlock<Block> NT_MACHINE1 = registerBlock("nt_machine1",
             () -> new NT_Machine1(BlockBehaviour.Properties.of()));
@@ -36,9 +46,6 @@ public class Blocks2 {
 
     public static final DeferredBlock<Block> CUTTINGMACHINE = registerBlock("cuttingmachine",
             () -> new CuttingMachine(BlockBehaviour.Properties.of()));
-
-    public static final DeferredBlock<Block> NATURA_COLLECTOR = registerBlock("natura_collector",
-            () -> new NaturaCollectorBlock(BlockBehaviour.Properties.of()));
 
     public static final DeferredBlock<Block> ROOTED_CONDUIT = registerBlock("rooted_conduit",
             () -> new RootedConduitBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CONDUIT).noOcclusion()));

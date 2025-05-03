@@ -3,20 +3,16 @@
   "category": "misc",
   "group": "arbormechanica",
   "key": {
-    "#": {
-      "item": "minecraft:stripped_acacia_log"
-    },
     "X": {
-      "item": "minecraft:chain"
+      "item": "arbor_mechanica:plant_fibers"
     }
   },
   "pattern": [
-    "X X",
-    "X X",
-    "###"
+    "XX",
+    "XX"
   ],
   "result": {
     "count": 1,
-    "id": "arbor_mechanica:nt_machine1"
+    "id": "arbor_mechanica:fiber_rug"
   }
 }

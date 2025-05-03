@@ -48,6 +48,15 @@ public class Items {
                 }
             });
 
+    public static final DeferredItem<Item> FIBER_RUG = ITEMS.register("fiber_rug",
+            () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.arbor_mechanica.fiber_rug.tooltip"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
+
     public static final DeferredItem<Item> WOODEN_KNIFE = ITEMS.register("wooden_knife",
             () -> new Item(new Item.Properties()) {
                 @Override

@@ -1,5 +1,6 @@
 {
   "tooltip.arbor_mechanica.wooden_gear.tooltip": "You need to use that for the Nature Age Machines",
+  "tooltip.arbor_mechanica.mossy_core.tooltip": "Found in a old tree, that contained Prehistoric Aura of Nature... ",
   "block.arbor_mechanica.wooden_gear_box": "Wooden Gear Box",
   "block.arbor_mechanica.mossy_core": "Mossy Core",
   "block.arbor_mechanica.nt_machine1": "Natura Converter",
@@ -18,5 +19,7 @@
   "tooltip.arbor_mechanica.plant_fibers.tooltip": "Obtainable by breaking grass with a knife.",
   "item.arbor_mechanica.plant_fibers": "Plant Fibers",
   "tooltip.arbor_mechanica.wooden_knife.tooltip": "Used for cutting nature plants",
-  "item.arbor_mechanica.wooden_knife": "Wooden Knife"
+  "item.arbor_mechanica.wooden_knife": "Wooden Knife",
+  "tooltip.arbor_mechanica.fiber_rug.tooltip": "Used for isolating Machines.",
+  "item.arbor_mechanica.fiber_rug": "Fiber Rug"
 }

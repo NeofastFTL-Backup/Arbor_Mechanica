@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "arbormechanica",
+  "key": {
+    "L": {
+      "item": "minecraft:oak_log"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "G": {
+      "item": "arbor_mechanica:wooden_gear"
+    }
+  },
+  "pattern": [
+    "LRL",
+    "RGR",
+    "LRL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "arbor_mechanica:wooden_gear_box"
+  }
+}

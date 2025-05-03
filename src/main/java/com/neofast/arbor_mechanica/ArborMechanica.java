@@ -7,6 +7,7 @@ import com.neofast.arbor_mechanica.network.Menus;
 import com.neofast.arbor_mechanica.network.custom.CuttingMachineScreen;
 import com.neofast.arbor_mechanica.network.custom.NT_Machine1Screen;
 import com.neofast.arbor_mechanica.network.custom.NT_Machine2Screen;
+import com.neofast.arbor_mechanica.network.loot.ModLootMod;
 import com.neofast.arbor_mechanica.recipes.Recipes;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
@@ -49,6 +50,7 @@ public class ArborMechanica {
         TileEntities.register(modEventBus);
         Menus.register(modEventBus);
         Recipes.register(modEventBus);
+        ModLootMod.register(modEventBus);
 
 
         // Register the item to a creative tab
@@ -69,6 +71,7 @@ public class ArborMechanica {
             event.accept(Items.TWINE_CORD);
             event.accept(Items.PLANT_FIBERS);
             event.accept(Items.WOODEN_KNIFE);
+            event.accept(Items.FIBER_RUG);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
@@ -76,7 +79,6 @@ public class ArborMechanica {
             event.accept(Blocks2.NT_MACHINE1);
             event.accept(Blocks2.NT_MACHINE2);
             event.accept(Blocks2.CUTTINGMACHINE);
-            event.accept(Blocks2.NATURA_COLLECTOR);
             event.accept(Blocks2.MOSSY_CORE);
             event.accept(Blocks2.ROOTED_CONDUIT);
             event.accept(Blocks2.FROSTING_CONDUIT);

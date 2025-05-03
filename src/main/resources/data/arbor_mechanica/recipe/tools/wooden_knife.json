@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "arbormechanica",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "L": {
+      "item": "minecraft:oak_log"
+    }
+  },
+  "pattern": [
+    "  L",
+    " L ",
+    "S  "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "arbor_mechanica:wooden_knife"
+  }
+}

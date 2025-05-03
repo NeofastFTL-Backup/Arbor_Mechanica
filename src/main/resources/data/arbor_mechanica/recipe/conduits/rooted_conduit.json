@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "arbormechanica",
+  "key": {
+    "L": {
+      "item": "arbor_mechanica:sapling_gear"
+    },
+    "R": {
+      "item": "arbor_mechanica:twine_cord"
+    },
+    "G": {
+      "item": "minecraft:conduit"
+    }
+  },
+  "pattern": [
+    "LRL",
+    "RGR",
+    "LRL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "arbor_mechanica:rooted_conduit"
+  }
+}

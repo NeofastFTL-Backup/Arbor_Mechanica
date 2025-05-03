@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "arbormechanica",
+  "key": {
+    "L": {
+      "item": "minecraft:mossy_stone_bricks"
+    },
+    "R": {
+      "item": "minecraft:moss_block"
+    },
+    "G": {
+      "item": "minecraft:conduit"
+    }
+  },
+  "pattern": [
+    "LRL",
+    "RGR",
+    "LRL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "arbor_mechanica:mossy_conduit"
+  }
+}

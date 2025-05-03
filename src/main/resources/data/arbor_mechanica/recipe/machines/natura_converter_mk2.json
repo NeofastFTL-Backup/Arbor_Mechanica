@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "arbormechanica",
+  "key": {
+    "#": {
+      "item": "arbor_mechanica:fiber_rug"
+    },
+    "M": {
+      "item": "arbor_mechanica:nt_machine1"
+    },
+    "B": {
+      "item": "minecraft:black_wool"
+    },
+    "G": {
+      "item": "arbor_mechanica:wooden_gear_box"
+    },
+    "S": {
+      "item": "arbor_mechanica:mossy_core"
+    },
+    "C": {
+      "item": "arbor_mechanica:wooden_gear"
+    }
+  },
+  "pattern": [
+    "CSC",
+    "BGB",
+    "#M#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "arbor_mechanica:nt_machine2"
+  }
+}
