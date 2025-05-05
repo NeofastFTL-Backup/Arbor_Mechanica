@@ -1,14 +1,15 @@
 package com.neofast.arbor_mechanica;
 
-import com.neofast.arbor_mechanica.block.Blocks2;
-import com.neofast.arbor_mechanica.block.entities.TileEntities;
-import com.neofast.arbor_mechanica.item.Items;
-import com.neofast.arbor_mechanica.network.Menus;
-import com.neofast.arbor_mechanica.network.custom.CuttingMachineScreen;
-import com.neofast.arbor_mechanica.network.custom.NT_Machine1Screen;
-import com.neofast.arbor_mechanica.network.custom.NT_Machine2Screen;
-import com.neofast.arbor_mechanica.network.loot.ModLootMod;
-import com.neofast.arbor_mechanica.recipes.Recipes;
+import com.neofast.arbor_mechanica.ecoforgeupdate.network.custom.NaturaCollectorScreen;
+import com.neofast.arbor_mechanica.ecoforgeupdate.block.Blocks2;
+import com.neofast.arbor_mechanica.ecoforgeupdate.block.entities.TileEntities;
+import com.neofast.arbor_mechanica.ecoforgeupdate.item.Items;
+import com.neofast.arbor_mechanica.ecoforgeupdate.network.Menus;
+import com.neofast.arbor_mechanica.ecoforgeupdate.network.custom.CuttingMachineScreen;
+import com.neofast.arbor_mechanica.ecoforgeupdate.network.custom.NT_Machine1Screen;
+import com.neofast.arbor_mechanica.ecoforgeupdate.network.custom.NT_Machine2Screen;
+import com.neofast.arbor_mechanica.ecoforgeupdate.network.loot.ModLootMod;
+import com.neofast.arbor_mechanica.ecoforgeupdate.recipes.Recipes;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
@@ -52,6 +53,8 @@ public class ArborMechanica {
         Recipes.register(modEventBus);
         ModLootMod.register(modEventBus);
 
+        //Divider for the Next Update
+
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -72,8 +75,8 @@ public class ArborMechanica {
             event.accept(Items.PLANT_FIBERS);
             event.accept(Items.WOODEN_KNIFE);
             event.accept(Items.FIBER_RUG);
+            event.accept(Items.NATURA_ESSENCE);
         }
-
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(Blocks2.WOODEN_GEAR_BOX);
             event.accept(Blocks2.NT_MACHINE1);
@@ -83,6 +86,11 @@ public class ArborMechanica {
             event.accept(Blocks2.ROOTED_CONDUIT);
             event.accept(Blocks2.FROSTING_CONDUIT);
             event.accept(Blocks2.MOSSY_CONDUIT);
+
+
+            //Divider for the Next Update
+            event.accept(Blocks2.NATURA_COLLECTOR);
+
         }
     }
 
@@ -104,6 +112,12 @@ public class ArborMechanica {
             event.register(Menus.NT_MACHINE1_MENU.get(), NT_Machine1Screen::new);
             event.register(Menus.NT_MACHINE2_MENU.get(), NT_Machine2Screen::new);
             event.register(Menus.CUTTINGMACHINE_MENU.get(), CuttingMachineScreen::new);
+            event.register(Menus.NATURA_COLLECTOR_MENU.get(), NaturaCollectorScreen::new);
+
+            //Divider for the Next Update
+
+
+
         }
     }
 }

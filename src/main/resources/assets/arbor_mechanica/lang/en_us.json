@@ -21,5 +21,7 @@
   "tooltip.arbor_mechanica.wooden_knife.tooltip": "Used for cutting nature plants",
   "item.arbor_mechanica.wooden_knife": "Wooden Knife",
   "tooltip.arbor_mechanica.fiber_rug.tooltip": "Used for isolating Machines.",
-  "item.arbor_mechanica.fiber_rug": "Fiber Rug"
+  "item.arbor_mechanica.fiber_rug": "Fiber Rug",
+  "tooltip.arbor_mechanica.natura_essence.tooltip": "Used for isolating Machines.",
+  "item.arbor_mechanica.natura_essence": "Natura Essence"
 }

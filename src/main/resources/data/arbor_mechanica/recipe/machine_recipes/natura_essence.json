@@ -1,0 +1,9 @@
+{
+  "type": "arbor_mechanica:natura_collector_recipe",
+  "ingredient": {
+    "item": "arbor_mechanica:mossy_core"
+  },
+  "result": {
+    "id": "arbor_mechanica:natura_essence"
+  }
+}
